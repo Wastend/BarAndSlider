@@ -63,10 +63,10 @@
         </h3>
         <div class="download__buttons">
           <button class="download__button" onclick="window.open('https://www.purrweb.com/ru/portfolio/no-tab/')">
-            <img src="src/images/downloadAppStore.svg" alt="app store">
+            <img class="download__button__img" src="src/images/downloadAppStore.svg" alt="app store">
           </button>
           <button class="download__button" onclick="window.open('https://www.purrweb.com/ru/portfolio/no-tab/')">
-            <img src="src/images/downloadGooglePlay.svg" alt="google play">
+            <img class="download__button__img" src="src/images/downloadGooglePlay.svg" alt="google play">
           </button>
         </div>
       </div>
@@ -143,11 +143,228 @@
       </div>
 
     </section>
+    <section class="diagrams__container">
+      <div class="vision__info">
+        <h2>
+          BI Tool Integration
+        </h2>
+        <p>
+          We use Business Intelligence Tool that allows you to be updated what is happening in your business just by one
+          click. Track revenue
+          and profit by one click.
+        </p>
+      </div>
+      <div class="diagrams__pictures">
+        <picture class="diagram__picture pic6">
+          <img src="src/images/diagram-6.svg" alt="">
+        </picture>
+        <picture class="diagram__picture pic1">
+          <img src="src/images/diagram-1.svg" alt="">
+        </picture>
+        <picture class="diagram__picture pic2">
+          <img src="src/images/diagram-2.svg" alt="">
+        </picture>
+        <picture class="diagram__picture pic3">
+          <img src="src/images/diagram-3.svg" alt="">
+        </picture>
+        <picture class="diagram__picture pic4">
+          <img src="src/images/diagram-4.svg" alt="">
+        </picture>
+        <picture class="diagram__picture pic5">
+          <img src="src/images/diagram-5.svg" alt="">
+        </picture>
+        <picture class="diagram__picture pic7">
+          <img src="src/images/diagram-7.svg" alt="">
+        </picture>
+      </div>
+    </section>
+
+    <section class="order">
+      <div class="order__background">
+        <div class="order__background_picture background-dj">
+        </div>
+        <div class="order__background_picture background-cocktail">
+        </div>
+      </div>
+
+      <picture class="nightlife">
+        <img src="src/images/Nightlife.png" alt="">
+      </picture>
+
+      <div class="qr-code__order">
+        <div class="qr-code__order__info-and-downloads">
+          <div class="vision__info">
+            <h2>
+              QR code
+            </h2>
+            <p>
+              No more conflict situations due to
+              wrong order. The guest selects the
+              positions, and after that an
+              individual QR code of his order
+              is generated
+            </p>
+          </div>
+          <div class="download__buttons">
+            <button class="download__button appStore"
+              onclick="window.open('https://www.purrweb.com/ru/portfolio/no-tab/')">
+              <img class="appStore" src="src/images/downloadAppStore.svg" alt="app store">
+            </button>
+            <button class="download__button googlePlay"
+              onclick="window.open('https://www.purrweb.com/ru/portfolio/no-tab/')">
+              <img class="googlePlay" src="src/images/downloadGooglePlay.svg" alt="google play">
+            </button>
+          </div>
+        </div>
+
+        <div class="order__pictures">
+          <picture class="order__picture1">
+            <img class="order__img" src="src/images/order-waiting.png" alt="">
+          </picture>
+          <picture class="order__picture2">
+            <img class="order__img" src="src/images/order-cooking.png" alt="">
+          </picture>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="qr-code__generate">
+      <div class="qr-code__generate__notab">
+        <picture>
+          <img class="qr-code__generate__spot" src="src/images/peorple-spot.png" alt="">
+        </picture>
+        <div class="qr-code__generate__scan">
+          <picture class="qr-code__generate__scan__picture-phone">
+            <img class="qr-code__generate__scan__img-phone" src="src/images/generate-qr-code.png" alt="">
+          </picture>
+          <div class="scan__picture-arrow">
+            <picture class="qr-code__generate__scan__picture-arrow">
+              <img src="src/images/Arrow.svg" alt="">
+            </picture>
+            <p class="qr-code__generate__scan__info">
+              Scan QR-code
+            </p>
+          </div>
+
+        </div>
+        <div class="qr-code__generate__info">
+          <h2 class="qr-code__generate__info__title">
+            Generate your QR-code
+          </h2>
+          <p class="qr-code__generate__info__main">
+            The guest QR code is scanned
+            by the staff and automatically sent
+          </p>
+        </div>
+
+
+      </div>
+
+    </section>
+    <section class="advantages__notab">
+      <div class="advantages__notab__easier_ordering">
+        <h2>
+          Easier ordering.
+          Happier guests.
+        </h2>
+        <p>
+          NoTab makes it simple for patrons to easily
+        </p>
+      </div>
+      <div class="advantages__notab__iphone">
+        <div class="advantage__first">
+          No more lost or
+          forgotten credit cards
+        </div>
+        <div class="advantage__second">
+          No more lost or
+          forgotten credit cards
+        </div>
+        <div class="advantage__third">
+          No more split your tab
+        </div>
+        <div class="advantage__four">
+          NSkip the line
+        </div>
+      </div>
+    </section>
+
+    <section class="notab">
+      <div class="container">
+        <picture>
+          <img src="src/images/notab-phone.svg" alt="">
+        </picture>
+      </div>
+    </section>
+
+    <section class="registration">
+      <div class="vision__info">
+        <h2>
+          Get In Touch
+        </h2>
+        <p>
+          Have questions about Noble or just want to say hello?
+          Drop us a line and a member of our team will getback to you shortly.
+        </p>
+      </div>
+      <form id="form" class="registration-form">
+        <input class="form__input" required type="text" placeholder="Name" id="name" name="name">
+        <input class="form__input" required type="text" placeholder="Venue Name" id="venue-Name" name="venue-Name">
+        <div>
+          <input class="form__input" required type="text" placeholder="Venue City" id="venue-City" name="venue-City">
+          <input class="form__input" required type="text" placeholder="State City" id="state-City" name="state-City">
+        </div>
+        <input class="form__input" required type="email" placeholder="Email" id="email" name="email">
+        <input class="form__input" required type="text" placeholder="Subject" id="subject" name="subject">
+        <textarea class="form__input input4" required placeholder="Your message" id="message" name="message"></textarea>
+      </form>
+      <button class="form__button" type="submit" form="form">Send</button>
+      <div class="download-app">
+        <h4>
+          DOWNLOAD OUR APP
+        </h4>
+        <div class="download__buttons">
+          <button class="download__button" onclick="window.open('https://www.purrweb.com/ru/portfolio/no-tab/')">
+            <img class="download__button__img" src="src/images/downloadAppStore.svg" alt="app store">
+          </button>
+          <button class="download__button" onclick="window.open('https://www.purrweb.com/ru/portfolio/no-tab/')">
+            <img class="download__button__img" src="src/images/downloadGooglePlay.svg" alt="google play">
+          </button>
+        </div>
+      </div>
+    </section>
 
   </main>
 
   <footer>
+    <div class="container">
+      <div class="footer__column footer__column-first">
+        <picture>
+          <img src="src/images/footer-logo.png" alt="">
+        </picture>
+        <div>
+          <p>
+            Contact us
+          </p>
+          <a href="mailto:support@notab.com">
+            support@notab.com
+          </a>
+        </div>
 
+        <p>
+          © 2020 - NoTab®
+        </p>
+      </div>
+      <div class="footer__column footer__column-second">
+        <a href="https://policies.google.com/terms">
+          Terms to use
+        </a>
+        <a href="https://policies.google.com/privacy">
+          Privacy policy
+        </a>
+      </div>
+    </div>
   </footer>
 </body>
 
