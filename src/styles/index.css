@@ -5,9 +5,13 @@
 
   /* Colors */
   --color-black: #000;
+  --color-bunker: #121212;
   --color-dark-gray: #555;
+  --color-white-gray: #ccc;
+  --color-error-background:#f4f4f4;
   --color-white: #FFF;
-  --color-red: #f00;
+  --color-error: #f00;
+
 
 }
 
@@ -92,6 +96,11 @@ body {
   color: var(--color-white);
   text-decoration: none;
   position: relative;
+  transition: 0.6s linear;
+}
+
+.link:hover {
+  color: var(--color-dark-gray);
 }
 
 .link::after {
@@ -103,6 +112,7 @@ body {
   top: 80%;
   left: 50%;
   transform: translateX(-50%);
+  transition: 0.6s linear;
 }
 
 .secondCaption {
@@ -129,6 +139,21 @@ body {
   overflow: hidden;
 }
 
+.small-spot img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+}
+
+.mission-and-vision .small-spot img {
+  width: 15.83rem;
+  height: 15.83rem;
+  right: 10%;
+  bottom: 40%;
+}
+
 .header__spot {
   position: absolute;
   width: 422.63px;
@@ -145,15 +170,16 @@ body {
   flex-direction: row;
   align-items: center;
   gap: 0.3rem;
+  transition: 0.6s linear;
+}
+
+.logo-group:hover {
+  -webkit-filter: invert(15%);
+  cursor: pointer;
 }
 
 .header_link {
   font-family: 'NotoSans-Medium', sans-serif;
-}
-
-.logo__image {
-  width: 6.06rem;
-  height: 5.94rem;
 }
 
 .notab__image {
@@ -169,6 +195,11 @@ body {
   margin-top: 0.34rem;
   font-family: 'NotoSans-Medium' sans-serif;
   gap: 0.7rem;
+  transition: 0.6s linear;
+}
+
+.login-group:hover {
+  -webkit-filter: invert(35%);
 }
 
 .login__icon {
@@ -271,18 +302,23 @@ body {
   display: flex;
   flex-direction: row;
   gap: 1.56rem;
-  margin-right: 4.7rem;
+  margin-right: 4.3vw;
   max-width: 20.89rem;
   width: 100%;
 }
 
 .download__button {
-  max-width: 9.05rem;
+  max-width: 10.55rem;
   width: 100%;
   background-color: transparent;
   position: relative;
   cursor: pointer;
   border: 0;
+  transition: 0.6s linear;
+}
+
+.download__button:hover {
+  -webkit-filter: invert(35%);
 }
 
 .appStore {
@@ -357,6 +393,7 @@ body {
 }
 
 .vision__info {
+  z-index: 100;
   display: flex;
   flex-direction: column;
   /* align-items: center; */
@@ -384,7 +421,7 @@ body {
   position: relative;
   margin-top: 32.8vw;
   background-image: url('../images/id-scanner.png');
-  background-size: contain;
+  background-size: 100%;
   background-repeat: no-repeat;
   padding-top: 32.7vw;
 }
@@ -415,9 +452,17 @@ body {
 .diagrams__container {
   display: flex;
   flex-direction: row;
+  position: relative;
   max-width: 69.2rem;
   width: 90%;
   margin-top: 13.7vw;
+}
+
+.diagrams__container .small-spot img {
+  width: 38.89rem;
+  height: 38.89rem;
+  left: -8%;
+  bottom: 15%;
 }
 
 .diagrams__container .vision__info {
@@ -446,11 +491,11 @@ body {
   max-width: 100%;
 }
 
-.pic6 {
+.pic1 {
   left: 44%;
 }
 
-.pic5 {
+.pic2 {
   left: 18.4%;
   top: 34%;
 }
@@ -459,22 +504,22 @@ body {
   top: 46%;
 }
 
-.pic1 {
+.pic7 {
   top: 86%;
   left: 59%;
 }
 
-.pic2 {
+.pic6 {
   top: 72.7%;
   left: 25.4%;
 }
 
-.pic3 {
+.pic5 {
   top: 54%;
   left: 35.5%;
 }
 
-.pic7 {
+.pic3 {
   top: 33.6%;
   left: 61.3%;
 }
@@ -590,6 +635,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   width: 100%;
   margin-top: 7.9rem;
 }
@@ -689,6 +735,13 @@ body {
   width: 100%;
 }
 
+.advantages__notab .small-spot img {
+  width: 38.89rem;
+  height: 38.89rem;
+  right: -10%;
+  bottom: 45%;
+}
+
 .advantages__notab__easier_ordering {
   display: flex;
   flex-direction: column;
@@ -773,9 +826,26 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   max-width: 45.44rem;
   width: 80%;
 }
+
+.registration .small-spot__first {
+  width: 30rem;
+  height: 30rem;
+  right: 45%;
+  bottom: 75%;
+}
+
+.registration .small-spot__second {
+  max-width: 30rem;
+  width: 100%;
+  height: auto;
+  left: 50vw;
+  top: 40%;
+}
+
 
 .registration .vision__info {
   padding: 0;
@@ -801,6 +871,7 @@ form div {
 }
 
 .form__input {
+  z-index: 100;
   border: none;
   box-sizing: border-box;
   background: #F7F9FC;
@@ -821,6 +892,10 @@ form div {
   font-size: 16px;
 }
 
+.form__input:focus {
+  background-color: var(--color-white-gray);
+}
+
 .input4 {
   grid-column: 1 / 3;
   grid-row: 3 / 4;
@@ -828,7 +903,8 @@ form div {
 }
 
 .error {
-  border: 2px solid var(--color-red);
+  background-color: var(--color-error-background);
+  border: 2px solid var(--color-error);
 }
 
 .form__button {
@@ -842,10 +918,12 @@ form div {
   border: 1px solid var(--color-white);
   border-radius: 0.56rem;
   color: var(--color-white);
+  transition: 0.6s linear;
 }
 
 .form__button:hover {
   cursor: pointer;
+  background-color: var(--color-bunker);
 }
 
 .download-app {
@@ -866,8 +944,15 @@ footer {
   width: 100%;
   position: relative;
   align-items: center;
-  margin-top: 8.33rem;
+  margin: 8.33rem 0 4.72rem 0;
   font-family: "NotoSans-Bold", sans-serif;
+}
+
+footer .small-spot img {
+  width: 30rem;
+  height: 30rem;
+  left: 0%;
+  bottom: -62%;
 }
 
 footer .container {
@@ -898,4 +983,47 @@ footer a {
 
 .footer__column div {
   gap: 0.4rem;
+}
+
+.footer__link {
+  transition: 0.6s linear;
+}
+
+.footer__link:hover {
+  color: var(--color-dark-gray);
+}
+
+@media (max-width: 1024px) {
+  * {
+    font-size: 16px;
+  }
+  
+  .pic2 {
+    left: 5.4%;
+    top: 34%;
+  }
+  
+  .pic4 {
+    top: 46%;
+  }
+  
+  .pic7 {
+    top: 106%;
+    left: 59%;
+  }
+  
+  .pic6 {
+    top: 82.7%;
+    left: 15.4%;
+  }
+  
+  .pic5 {
+    top: 64%;
+    left: 35.5%;
+  }
+  
+  .pic3 {
+    top: 33.6%;
+    left: 61.3%;
+  }
 }
