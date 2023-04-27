@@ -17,17 +17,17 @@
     </div>
     <div href="#" class="logo-group">
       <picture>
-        <img src="src/images/logo.svg" alt="logo" loading="lazy" decoding="async">
+        <img class="logo__image" src="src/images/logo.svg" alt="logo" >
       </picture>
       <picture>
-        <img class="notab__image" src="src/images/NoTab.svg" alt="NoTab" loading="lazy" decoding="async">
+        <img class="logo__text" class="notab__image" src="src/images/NoTab.svg" alt="NoTab">
       </picture>
     </div>
 
     <div class="login-group">
       <a href="#">
         <picture>
-          <img class="login__icon" src="src/images/loginIcon.svg" alt="login__icon" loading="lazy" decoding="async">
+          <img class="login__icon" src="src/images/loginIcon.svg" alt="login__icon">
         </picture>
       </a>
       <p href="#" class="header_link link">Login</p>
@@ -41,16 +41,15 @@
           <h1 class="info__title">A platform <br>that works smarter</h1>
           <div class="container-spot">
             <picture>
-              <img class="blue-spot" src="src/images/blueSpot.svg" alt="login__icon" loading="lazy" decoding="async">
+              <img class="blue-spot" src="src/images/blueSpot.svg" alt="login__icon">
             </picture>
           </div>
           <div class="presentation__info__description">
             <picture class="info__description_picture">
-              <img class="picture__stick" src="src/images/stick.svg" alt="login__icon" loading="lazy" decoding="async">
+              <img class="picture__stick" src="src/images/stick.svg" alt="login__icon">
             </picture>
-            <p class="info__description">NoTab allows bars & nightclubs <br>to manage, understand, and grow
-              <br>their
-              business from a single dashboard
+            <p class="info__description">NoTab allows bars & nightclubs to manage, understand, and grow their business
+              from a single dashboard
             </p>
           </div>
 
@@ -154,7 +153,6 @@
       <picture class="small-spot">
         <img src="src/images/peorple-spot.png" alt="">
       </picture>
-
       <div class="vision__info">
         <h2>
           BI Tool Integration
@@ -193,8 +191,6 @@
             <img src="src/images/diagram-7.svg" alt="">
           </picture>
         </div>
-
-
       </div>
     </section>
 
@@ -250,7 +246,7 @@
 
     <section class="qr-code__generate">
       <div class="qr-code__generate__notab">
-        <picture>
+        <picture class="qr-code__generate__picture">
           <img class="qr-code__generate__spot" src="src/images/peorple-spot.png" alt="">
         </picture>
         <div class="qr-code__generate__scan">
@@ -276,11 +272,9 @@
             by the staff and automatically sent
           </p>
         </div>
-
-
       </div>
-
     </section>
+
     <section class="advantages__notab">
       <picture class="small-spot">
         <img src="src/images/small-peorple-spot4.png" alt="">
@@ -342,7 +336,7 @@
         </div>
         <input class="form__input" type="text" placeholder="Email" id="email" name="email">
         <input class="form__input" type="text" placeholder="Subject" id="subject" name="subject">
-        <textarea class="form__input input4" placeholder="Your message" id="message" name="message"></textarea>
+        <textarea class="form__input input4" placeholder="Message" id="message" name="message"></textarea>
       </form>
       <button class="form__button" type="submit" form="registration-form">Send</button>
       <div class="download-app">
@@ -392,6 +386,10 @@
           Privacy policy
         </a>
       </div>
+    </div>
+    <div id="cookie" class="cookie">
+      <p>We use cookie to improve your experience on our site. By using our site you consent cookies. </p>
+      <button id="cookie__button" class="button cookie_accept">OK</button>
     </div>
   </footer>
   <script src="src/scripts/script.js"></script>

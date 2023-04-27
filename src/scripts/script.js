@@ -7,6 +7,9 @@ var email = document.getElementById("email")
 var subject = document.getElementById("subject")
 var message = document.getElementById("message")
 
+let cookieNotification = document.getElementById('cookie')
+let cookie_button = document.getElementById('cookie__button')
+
 const fields = [registration_name, venue_name, venue_city, state_city, email, subject, message]
 
 const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu
@@ -44,3 +47,13 @@ for (let field of fields) {
     field.classList.remove('error')
   })
 }
+
+function checkCookies() {
+  cookieNotification.classList.add('show')
+
+  cookie_button.addEventListener('click', function () {
+    cookieNotification.classList.add('hide')
+    setTimeout(() => { cookieNotification.classList.remove('show') }, 1000)
+  })
+}
+checkCookies()
