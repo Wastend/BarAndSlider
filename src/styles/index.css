@@ -80,6 +80,7 @@ body {
   align-items: center;
   box-sizing: border-box;
   position: relative;
+
 }
 
 .container {
@@ -108,7 +109,7 @@ body {
   border-bottom: 1px solid var(--color-white);
   width: 110%;
   height: 1px;
-  top: 80%;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   transition: 0.6s linear;
@@ -136,7 +137,6 @@ body {
   height: 900px;
   right: 0;
   top: 0;
-  overflow: hidden;
 }
 
 .small-spot img {
@@ -182,6 +182,10 @@ body {
   font-family: 'NotoSans-Medium', sans-serif;
 }
 
+.header_link.link::after {
+  top: 80%;
+}
+
 .notab__image {
   width: 5.33rem;
   height: 1.38rem;
@@ -191,6 +195,7 @@ body {
 .login-group {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   cursor: pointer;
   margin-top: 0.34rem;
   font-family: 'NotoSans-Medium' sans-serif;
@@ -359,8 +364,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 24.39rem;
+  max-width: 24.39rem;
+  width: 100%;
   height: 17.13rem;
+  /* height: 100%; */
   border: 2px solid var(--color-white);
   border-radius: 1.16rem;
   letter-spacing: -0.05rem;
@@ -368,9 +375,18 @@ body {
   gap: 1.67rem;
 }
 
+.join__block h3 {
+  max-width: 22rem;
+  width: 100%;
+}
+
 .join__block-link {
   font-size: 1.33rem;
   font-family: 'NotoSans-Regular', sans-serif;
+}
+
+.join__block-link.link::after {
+  width: 105%;
 }
 
 .partners__vision {
@@ -800,8 +816,8 @@ body {
 
 .advantages__notab__iphone div {
   width: 100%;
-  border: 0.8px solid var(--color-white);
-  border-radius: 0.9rem;
+  border: 0.76px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.56rem;
   padding: 1.11rem;
   font-family: 'Roboto-Medium', sans-serif;
   background-color: var(--color-black);
@@ -838,6 +854,10 @@ body {
   height: 61.11rem;
   background-image: url(../images/backgrounds/background-notab2.png);
   background-repeat: round;
+}
+
+.advantages__notab {
+  margin: 15rem 0 10rem 0;
 }
 
 .notab img {
@@ -974,10 +994,12 @@ footer {
 }
 
 footer .small-spot img {
-  width: 30rem;
-  height: 30rem;
-  left: 0%;
-  bottom: -62%;
+  z-index: 1;
+  position: absolute;
+  width: 30vw;
+  height: 30vw;
+  left: 0;
+  bottom: -4.72rem;
 }
 
 footer .container {
@@ -994,6 +1016,7 @@ footer a {
 }
 
 .footer__column {
+  z-index: 10;
   display: flex;
   flex-direction: column;
 }
@@ -1040,19 +1063,18 @@ footer a {
 }
 
 .cookie {
-  display: flex;
-  z-index: 1000;
   display: none;
+  z-index: 1000;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   bottom: 0;
-  width: 100%;
-  height: 5.28rem;
+  width: 100vw;
+  height: 4rem;
   background-color: var(--color-cookie-background);
   box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);
   animation: showBottom 1s;
-  gap: 2rem;  
+  gap: 2rem;
 }
 
 .cookie.hide {
@@ -1064,6 +1086,7 @@ footer a {
 }
 
 .cookie p {
+  align-self: center;
   margin-left: 10rem;
   font-size: 0.78rem;
 }
@@ -1075,9 +1098,9 @@ footer a {
   border: 1px solid var(--color-white);
   color: var(--color-white);
   margin-right: 8rem;
-  max-width: 7.33rem;
+  max-width: 7rem;
   width: 100%;
-  height: 2.78rem;
+  height: 2.5rem;
   cursor: pointer;
   transition: 0.6s linear;
 }
@@ -1175,12 +1198,11 @@ footer a {
   }
 
   .login-group a {
-    width: 1.67rem;
-    height: 1.67rem;
+    font-size: 1.3rem;
   }
 
-  .login__icon {
-    margin-bottom: 1.3rem;
+  .header_link.link::after {
+    top: 90%;
   }
 
   .presentation__mockup__phone {
@@ -1213,8 +1235,7 @@ footer a {
   }
 
   .vision__mockup_picture {
-    position: relative;
-    right: 0;
+    right: 50vw;
     margin-right: 0;
   }
 
@@ -1300,13 +1321,13 @@ footer a {
   }
 
   .diagrams__container .small-spot img {
-    width: 30rem;
-    height: 30rem;
+    width: 30vw;
+    height: 30vw;
   }
 
   .advantages__notab .small-spot img {
-    width: 30rem;
-    height: 30rem;
+    width: 30vw;
+    height: 30vw;
   }
 
   .registration .vision__info {
@@ -1331,6 +1352,19 @@ footer a {
     font-size: 1.6rem;
   }
 
+  .start-component {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .start__presentation-group {
+    padding-left: 2rem;
+  }
+
+  .info__title {
+    width: 65vw;
+  }
+
   .header {
     display: flex;
     flex-direction: row;
@@ -1351,9 +1385,10 @@ footer a {
 
   .login-group {
     gap: 0;
+    margin-top: 0;
   }
 
-  .login-group a {
+  .login-group a picture {
     width: 0;
     height: 0;
   }
@@ -1369,10 +1404,6 @@ footer a {
 
   .presentation__info {
     margin: 0;
-  }
-
-  .presentation__mockup_picture {
-    margin-right: -5rem;
   }
 
   .presentation__info__description {
@@ -1429,9 +1460,11 @@ footer a {
   }
 
   .vision__mockup_picture {
+    position: relative;
     transform: rotate(-90deg);
     order: 2;
-    margin-top: 20rem;
+    margin: 15rem 0 10rem 0;
+    right: 0;
   }
 
   .vision__mockup__phone {
@@ -1459,8 +1492,13 @@ footer a {
     width: 90%;
   }
 
+  .presentation__mockup_picture {
+    margin: 4rem 0 0 0;
+  }
+
   .presentation__mockup__phone {
     max-width: 20.5rem;
+    min-width: 12rem;
   }
 
   .diagrams__container {
@@ -1501,17 +1539,17 @@ footer a {
     max-width: 15rem;
   }
 
+  .diagrams__container .vision__info p {
+    width: 20rem;
+  }
+
   .order {
-    margin: 0 0 15rem 0;
+    margin: 5rem 0 15rem 0;
   }
 
   .order__background {
     flex-direction: column;
     gap: 5rem;
-  }
-
-  .order__background_picture {
-    /* height: 100vw; */
   }
 
   .background-dj {
@@ -1560,7 +1598,7 @@ footer a {
   }
 
   .qr-code__generate__notab {
-    height: 17.5rem;
+    height: 14rem;
   }
 
   .qr-code__generate__picture {
@@ -1571,6 +1609,14 @@ footer a {
   .qr-code__generate__info {
     margin-bottom: 45rem;
     order: 1;
+    flex-direction: column;
+    align-items: start;
+    gap: 2rem;
+    margin-top: 0;
+  }
+
+  .qr-code__generate__info__title {
+    max-width: 28rem;
   }
 
   .qr-code__generate__scan {
@@ -1578,7 +1624,7 @@ footer a {
     display: flex;
     flex-direction: column;
     position: absolute;
-    margin-top: 3.5vw;
+    margin-top: 20vw;
     margin-left: 0;
   }
 
@@ -1589,8 +1635,14 @@ footer a {
   .qr-code__generate__scan__picture-arrow {
     position: relative;
     transform: rotate(30deg);
-    left: 5rem;
+    left: 3rem;
     bottom: 1rem;
+    width: 6rem;
+  }
+  
+  .qr-code__generate__scan__img-phone {
+    max-width: 12rem;
+    min-width: 8rem;
   }
 
   .advantages__notab__easier_ordering {
@@ -1630,6 +1682,12 @@ footer a {
     margin: 8.33rem 0 0rem 0;
   }
 
+  /* footer.small-spot {
+    position: absolute;
+    left: 0;
+    bottom: -2rem;
+  } */
+
   footer .container {
     flex-direction: column;
     align-items: center;
@@ -1657,38 +1715,18 @@ footer a {
   }
 
   footer .small-spot img {
-    bottom: -12%;
-  }
-
-  @keyframes showBottom {
-    from {
-      bottom: -100%;
-    }
-  
-    to {
-      bottom: 8rem;
-    }
-  }
-  
-  @keyframes closeBottom {
-    from {
-      bottom: 8rem;
-    }
-  
-    to {
-      bottom: -100%;
-    }
+    bottom: 0;
   }
 
   .cookie {
-    bottom: 8rem;
+    height: 6rem;
   }
 
   .cookie p {
-    margin-left: 3rem;
+    margin-left: 1rem;
   }
-  
+
   .cookie button {
-    margin-right: 3rem;
+    margin-right: 1rem;
   }
 }
