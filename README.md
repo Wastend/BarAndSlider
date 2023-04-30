@@ -6,5 +6,5 @@ test task project
 ````
 git clone https://github.com/Wastend/BarAndSlider.git
 ````
-2. Open foler BarAndSlider
+2. Open folder BarAndSlider
 3. Open the file index.html
