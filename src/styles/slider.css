@@ -65,8 +65,8 @@ img {
   cursor: pointer;
 }
 
-.prev,
-.next {
+.prevButton,
+.nextButton {
   display: flex;
   position: relative;
   border-radius: 20px;
@@ -77,13 +77,13 @@ img {
   filter: invert(10%);
 }
 
-.prev:hover,
-.next:hover {
+.prevButton:hover,
+.nextButton:hover {
   background-color: rgb(247, 245, 245);
   animation: changeColor 0.5s;
 }
 
-.prev {
+.prevButton {
   transform: scale(-1, 1)
 }
 
