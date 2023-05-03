@@ -31,68 +31,66 @@ const setFirstElement = () => {
   }
 }
 
+
+
 setFirstElement()
-prevButton.addEventListener('click', () => {
-  if (prevButton.getAttribute('disabled') === null) {
-    prevButton.setAttribute("disabled", 'disabled')
-    nextButton.setAttribute("disabled", 'disabled')
-    let following_img
-    cirs[current].classList.remove('active')
-    if (current === 0) {
-      following_img = images[number_of_pictures - 1]
-      current = number_of_pictures - 1
+const buttons = [prevButton, nextButton]
+buttons.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    if (prevButton.getAttribute('disabled') === null) {
+      prevButton.setAttribute("disabled", 'disabled')
+      nextButton.setAttribute("disabled", 'disabled')
+      let followingImg
+      cirs[current].classList.remove('active')
+      if (index === 0) {
+        if (current === 0) {
+          followingImg = images[number_of_pictures - 1]
+          current = number_of_pictures - 1
+        }
+        else {
+          followingImg = images[current - 1]
+          current = current - 1
+        }
+      }
+      else {
+        if (current === number_of_pictures - 1) {
+          followingImg = images[0]
+          current = 0
+        }
+        else {
+          followingImg = images[current + 1]
+          current = current + 1
+        }
+      }
+      followingImg.classList.remove('invisible')
+      followingImg.classList.add('show')
+      current_img.classList.add(`swipe__${index === 1 ? 'right' : 'left'}__current`)
+      followingImg.classList.add(`swipe__${index === 1 ? 'right' : 'left'}__following`)
+      setTimeout(() => {
+        current_img.classList.add('invisible')
+        current_img.classList.remove('show')
+        current_img.classList.remove(`swipe__${index === 1 ? 'right' : 'left'}__current`)
+        followingImg.classList.remove(`swipe__${index === 1 ? 'right' : 'left'}__following`)
+        current_img = followingImg
+        cirs[current].classList.add('active')
+        prevButton.removeAttribute('disabled')
+        nextButton.removeAttribute('disabled')
+      }, 950)
     }
-    else {
-      following_img = images[current - 1]
-      current = current - 1
-    }
-    following_img.classList.remove('invisible')
-    following_img.classList.add('show')
-    current_img.classList.add('swipe__left__current')
-    following_img.classList.add('swipe__left__following')
-    setTimeout(() => {
-      current_img.classList.add('invisible')
-      current_img.classList.remove('show')
-      current_img.classList.remove('swipe__left__current')
-      following_img.classList.remove('swipe__left__following')
-      current_img = following_img
-      cirs[current].classList.add('active')
-      prevButton.removeAttribute('disabled')
-      nextButton.removeAttribute('disabled')
-    }, 950)
-  }
+  })
 })
 
-nextButton.addEventListener('click', () => {
-  if (nextButton.getAttribute('disabled') === null) {
-    prevButton.setAttribute("disabled", 'disabled')
-    nextButton.setAttribute("disabled", 'disabled')
-    let following_img
-    cirs[current].classList.remove('active')
-    if (current === number_of_pictures - 1) {
-      following_img = images[0]
-      current = 0
-    }
-    else {
-      following_img = images[current + 1]
-      current = current + 1
-    }
-    following_img.classList.remove('invisible')
-    following_img.classList.add('show')
-    current_img.classList.add('swipe__right__current')
-    following_img.classList.add('swipe__right__following')
+const timeout = (followingImg, counts) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       current_img.classList.add('invisible')
       current_img.classList.remove('show')
-      current_img.classList.remove('swipe__right__current')
-      following_img.classList.remove('swipe__right__following')
-      current_img = following_img
-      cirs[current].classList.add('active')
-      prevButton.removeAttribute('disabled')
-      nextButton.removeAttribute('disabled')
-    }, 950)
-  }
-})
+      current_img.style.animation = null
+      followingImg.style.animation = null
+      resolve()
+    }, 1000 / counts)
+  })
+}
 
 cirs.forEach((item, index) => {
   item.addEventListener('click', async () => {
@@ -100,36 +98,18 @@ cirs.forEach((item, index) => {
     nextButton.setAttribute("disabled", 'disabled')
     cirs[current].classList.remove('active')
     const counts = Math.abs(current - index)
-    if (index > current) {
-      for (let i = 0; i < counts; i++) {
-        const currentImg = images[current + i]
-        const followingImg = images[current + i + 1]
-
-        followingImg.classList.remove('invisible')
-        followingImg.classList.add('show')
-        currentImg.style.animation = `swipe__right__current ${1 / counts}s`
-
-        followingImg.style.animation = `swipe__right__following ${1 / counts}s`
-        const timeout = () => {
-          return new Promise((resolve) => {
-            setTimeout(() => {
-              currentImg.classList.add('invisible')
-              currentImg.classList.remove('show')
-              currentImg.style.animation = null
-              followingImg.style.animation = null
-              resolve()
-            }, 1000 / counts)
-          })
-        }
-        await timeout()
-      }
-    }
-    else if (current > index) {
-      for (let i = 0; i < counts; i++) {
-
-      }
+    const direction = index > current ? 1 : -1
+    for (let i = 0; i < counts; i++) {
+      current_img = images[current + i * direction]
+      const followingImg = images[current + i * direction + 1 * direction]
+      followingImg.classList.remove('invisible')
+      followingImg.classList.add('show')
+      current_img.style.animation = `swipe__${direction > 0 ? 'right' : 'left'}__current ${1 / counts}s`
+      followingImg.style.animation = `swipe__${direction > 0 ? 'right' : 'left'}__following ${1 / counts}s`
+      await timeout(followingImg, counts)
     }
     item.classList.add('active')
+    current_img = images[index]
     current = index
     prevButton.removeAttribute('disabled')
     nextButton.removeAttribute('disabled')
