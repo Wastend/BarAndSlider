@@ -9,3 +9,7 @@ git clone https://github.com/Wastend/BarAndSlider.git
 ````
 2. Open folder BarAndSlider
 3. Open the file index.html or slider.html
+### NoTab
+![Start page](https://github.com/Wastend/bar-and-slider/blob/main/images/NoTab.png)
+### Slider
+![Start page](https://github.com/Wastend/bar-and-slider/blob/main/images/Slider.png)
