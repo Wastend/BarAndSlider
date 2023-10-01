@@ -51,6 +51,11 @@
   src: url('../fonts/NotoSans-Regular.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'Avenir';
+  src: url('../fonts/Avenir-Black.woff2') format('woff2');
+}
+
 h1 {
   font-size: 3.56rem;
   font-family: 'PT Sans', sans-serif;
@@ -1033,7 +1038,12 @@ footer a {
   gap: 0.4rem;
 }
 
+.footer__text {
+  font-family: 'Avenir', sans-serif;
+}
+
 .footer__link {
+  font-family: 'Avenir', sans-serif;
   transition: 0.6s linear;
 }
 
